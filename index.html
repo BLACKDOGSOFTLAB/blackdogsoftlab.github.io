@@ -66,6 +66,17 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        /* 앱 아이콘 이미지 스타일 */
+        .app-icon-img {
+            width: 120px;  /* 아이콘 크기 조절 */
+            height: 120px;
+            margin: 0 auto 20px auto;
+            object-fit: contain; /* 이미지 비율 유지 */
+            border-radius: 24px; /* 앱 아이콘 특유의 둥근 사각형 느낌 */
+            /* 이미지가 없을 때를 대비한 기본 배경 */
+            background-color: #f0f0f0; 
+        }
+
         /* 앱별 아이콘 배경색 (앱 컨셉 컬러 반영) */
         .app-card.quickbill .app-icon { background-color: #1a1a1a; color: #d4af37; font-size: 2.5rem; } /* 블랙 컨셉 */
         .app-card.ganpanjangbu .app-icon { background-color: #e0f2f7; color: #0056b3; } /* 파란색 컨셉 */
@@ -102,7 +113,7 @@
 
     <div class="app-grid">
          <a href="https://blackdogsoftlab.github.io/apps/v010.html" class="app-card gyeonjeokwang">
-            <div class="app-icon">📊</div>
+            <img src="https://blackdogsoftlab.github.io/apps/icon_v010.png" alt="퀵빌 아이콘" class="app-icon-img">
             <h3 class="app-title">견적왕</h3>
             <p class="app-description">우리 회사의 비즈니스 문서를 쉽고 완벽하게 작성</p>
         </a>
@@ -111,7 +122,7 @@
             <h3 class="app-title">판매왕</h3>
             <p class="app-description">매출부터 재고, 미수금까지 한 번에 관리하는 앱</p>
         </a>
-                <a href="https://blackdogsoftlab.github.io/apps/v030.html" class="app-card jaegowang">
+        <a href="https://blackdogsoftlab.github.io/apps/v030.html" class="app-card jaegowang">
             <div class="app-icon">📦</div>
             <h3 class="app-title">재고왕</h3>
             <p class="app-description">쉽고 정확한 재고 솔루션, 바코드 스캔으로 간편하게</p>
