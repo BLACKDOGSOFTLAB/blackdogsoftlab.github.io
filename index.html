@@ -58,15 +58,21 @@
             width: 120px;
             height: 120px;
             margin: 0 auto 20px auto;
-            object-fit: cover; /* 이미지가 꽉 차게 조절 */
             
-            /* 라운드 처리 (22% 정도가 전형적인 앱 아이콘 느낌입니다) */
-            border-radius: 22%; 
+            /* 1. 기본 라운드 설정 */
+            border-radius: 22px; /* % 대신 px로 고정하면 더 명확하게 보입니다 */
             
-            /* 이미지가 라운드 밖으로 나가지 않게 설정 */
-            overflow: hidden; 
+            /* 2. 자식 요소(이미지)가 튀어나오지 못하게 강제 절삭 */
+            display: block;
+            overflow: hidden;
             
-            /* 깔끔함을 위해 테두리/배경색 제거 */
+            /* 3. 이미지 비율 유지하며 채우기 */
+            object-fit: cover;
+            
+            /* 4. 일부 브라우저에서 라운드가 무시되는 현상 방지 (마스크 효과) */
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            
+            /* 배경색 및 테두리 제거 */
             background-color: transparent;
             border: none;
         }
