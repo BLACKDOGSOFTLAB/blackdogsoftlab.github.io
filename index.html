@@ -30,40 +30,27 @@
         .intro-section p { font-size: 1rem; color: var(--text-muted); }
 
         /* 앱 그리드 */
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         
         .app-card {
             background-color: var(--white);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
             text-align: center;
-            box-shadow: 0 4px 15px var(--app-shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none; /* 링크 밑줄 제거 */
-            color: var(--text-dark); /* 텍스트 색상 */
-            display: flex; /* 내부 요소 정렬 */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            padding: 30px 20px;
         }
 
         .app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px var(--app-shadow);
-        }
-
-        .app-icon {
-            width: 100px; /* 아이콘 크기 */
-            height: 100px;
-            margin: 30px auto 15px auto;
-            border-radius: 25%; /* 둥근 사각형 */
-            background-color: var(--secondary-bg); /* 아이콘 배경색 (필요 시 앱별로 오버라이드) */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem; /* 임시 아이콘 텍스트 크기 */
-            color: var(--text-muted);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            border-color: #bbb;
         }
 
         /* 앱 아이콘 이미지 스타일 */
@@ -117,7 +104,7 @@
             <h3 class="app-title">견적왕</h3>
             <p class="app-description">우리 회사의 비즈니스 문서를 쉽고 완벽하게 작성</p>
         </a>
-        <a href="https://blackdogsoftlab.github.io/apps/v010.html" class="app-card panmaewang">
+        <a href="https://blackdogsoftlab.github.io/apps/v020.html" class="app-card panmaewang">
             <div class="app-icon">📈</div>
             <h3 class="app-title">판매왕</h3>
             <p class="app-description">매출부터 재고, 미수금까지 한 번에 관리하는 앱</p>
@@ -131,6 +118,11 @@
             <div class="app-icon">💰</div>
             <h3 class="app-title">장부왕</h3>
             <p class="app-description">수입·지출·손익을 한눈에, 스마트한 가계부/사업장부</p>
+        </a>
+         <a href="https://blackdogsoftlab.github.io/apps/v080.html" class="app-card jangbuwang">
+            <div class="app-icon">💰</div>
+            <h3 class="app-title">대리왕</h3>
+            <p class="app-description">대리왕</p>
         </a>
         <a href="https://blackdogsoftlab.github.io/apps/v040.html" class="app-card ganpanjangbu">
             <div class="app-icon">📘</div>
