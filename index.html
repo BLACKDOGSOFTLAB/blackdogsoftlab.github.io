@@ -1,33 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKDOGSOFT LAB. - 모바일 비즈니스 솔루션</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: black; /* 배경색을 검은색으로 설정 */
-            color: white; /* 글자색을 흰색으로 설정 */
-            display: flex;
+        :root {
+            --primary-bg: #f8f9fa; /* 밝은 배경 */
+            --secondary-bg: #e9ecef; /* 약간 어두운 배경 */
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+            --app-shadow: rgba(0,0,0,0.08);
+        }
+
+        body { font-family: 'Nanum Gothic', sans-serif; line-height: 1.6; margin: 0; color: var(--text-dark); background-color: var(--primary-bg); }
+        
+        /* 헤더 */
+        header { background-color: var(--text-dark); color: white; padding: 60px 20px; text-align: center; }
+        header h1 { font-size: 2.8rem; margin: 0; font-weight: 800; letter-spacing: -1px; }
+        header p { font-size: 1.1rem; margin-top: 10px; opacity: 0.9; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        /* 앱 소개 섹션 */
+        .intro-section { text-align: center; margin-bottom: 60px; }
+        .intro-section h2 { font-size: 2rem; color: var(--text-dark); margin-bottom: 20px; }
+        .intro-section p { font-size: 1rem; color: var(--text-muted); }
+
+        /* 앱 그리드 */
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        
+        .app-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 15px var(--app-shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none; /* 링크 밑줄 제거 */
+            color: var(--text-dark); /* 텍스트 색상 */
+            display: flex; /* 내부 요소 정렬 */
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px var(--app-shadow);
+        }
+
+        .app-icon {
+            width: 100px; /* 아이콘 크기 */
+            height: 100px;
+            margin: 30px auto 15px auto;
+            border-radius: 25%; /* 둥근 사각형 */
+            background-color: var(--secondary-bg); /* 아이콘 배경색 (필요 시 앱별로 오버라이드) */
+            display: flex;
             align-items: center;
-            height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
-            margin: 0; /* body의 기본 마진을 제거하여 가운데 정렬을 용이하게 함 */
+            justify-content: center;
+            font-size: 3rem; /* 임시 아이콘 텍스트 크기 */
+            color: var(--text-muted);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        h1 {
-            font-size: 2em; /* "BLACKDOGSOFT LAB."의 글자 크기를 조절 */
-        }
+        /* 앱별 아이콘 배경색 (앱 컨셉 컬러 반영) */
+        .app-card.quickbill .app-icon { background-color: #1a1a1a; color: #d4af37; font-size: 2.5rem; } /* 블랙 컨셉 */
+        .app-card.ganpanjangbu .app-icon { background-color: #e0f2f7; color: #0056b3; } /* 파란색 컨셉 */
+        .app-card.jaegowang .app-icon { background-color: #f3e5f5; color: #6a0dad; } /* 보라색 컨셉 */
+        .app-card.jangbuwang .app-icon { background-color: #fff5e6; color: #ff8c00; } /* 오렌지 컨셉 */
+        .app-card.gandanmemo .app-icon { background-color: #f8f9fa; color: #007bff; } /* 화이트 컨셉 */
+        .app-card.nigahallil .app-icon { background-color: #fce4ec; color: #e91e63; } /* 진분홍 컨셉 */
+        .app-card.gyeonjeokwang .app-icon { background-color: #e6f2ff; color: #007bff; } /* 견적왕 블루 */
+        .app-card.panmaewang .app-icon { background-color: #f8f8f8; color: #e74c3c; } /* 판매왕 레드 */
 
-        p {
-            font-size: 0.8em; /* "blackdogsoftlab@gmail.com"의 글자 크기를 작게 조절 */
-            margin-top: 0px; /* 상단 여백 추가 */
-        }
+
+        .app-title { font-size: 1.4rem; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; }
+        .app-description { font-size: 0.9rem; color: var(--text-muted); padding: 0 20px 25px 20px; flex-grow: 1; display: flex; align-items: center; justify-content: center; }
+        
+        /* 푸터 */
+        footer { background-color: var(--text-dark); color: var(--text-muted); padding: 40px 20px; text-align: center; font-size: 0.9rem; margin-top: 60px; }
+        footer a { color: var(--border-color); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .contact { margin-bottom: 15px; }
     </style>
-    <title>BLACKDOGSOFT LAB.</title>
 </head>
 <body>
+
+<header>
     <h1>BLACKDOGSOFT LAB.</h1>
-    <p>✉️ blackdogsoftlab@gmail.com</p>
+    <p>당신의 비즈니스를 위한 스마트 모바일 솔루션</p>
+</header>
+
+<div class="container">
+    <section class="intro-section">
+        <h2>우리의 앱으로 비즈니스를 혁신하세요</h2>
+        <p>효율적인 비즈니스 관리부터 개인의 생산성 향상까지, BlackDogSoftLab이 함께합니다.</p>
+    </section>
+
+    <div class="app-grid">
+         <a href="https://blackdogsoftlab.github.io/apps/v010.html" class="app-card gyeonjeokwang">
+            <div class="app-icon">📊</div>
+            <h3 class="app-title">견적왕</h3>
+            <p class="app-description">우리 회사의 비즈니스 문서를 쉽고 완벽하게 작성</p>
+        </a>
+        <a href="https://blackdogsoftlab.github.io/apps/v010.html" class="app-card panmaewang">
+            <div class="app-icon">📈</div>
+            <h3 class="app-title">판매왕</h3>
+            <p class="app-description">매출부터 재고, 미수금까지 한 번에 관리하는 앱</p>
+        </a>
+                <a href="https://blackdogsoftlab.github.io/apps/v030.html" class="app-card jaegowang">
+            <div class="app-icon">📦</div>
+            <h3 class="app-title">재고왕</h3>
+            <p class="app-description">쉽고 정확한 재고 솔루션, 바코드 스캔으로 간편하게</p>
+        </a>
+        <a href="https://blackdogsoftlab.github.io/apps/v060.html" class="app-card jangbuwang">
+            <div class="app-icon">💰</div>
+            <h3 class="app-title">장부왕</h3>
+            <p class="app-description">수입·지출·손익을 한눈에, 스마트한 가계부/사업장부</p>
+        </a>
+        <a href="https://blackdogsoftlab.github.io/apps/v040.html" class="app-card ganpanjangbu">
+            <div class="app-icon">📘</div>
+            <h3 class="app-title">간편장부</h3>
+            <p class="app-description">장부 작성부터 보고서까지 한 번에 관리하는 앱</p>
+        </a>
+        <a href="https://blackdogsoftlab.github.io/apps/v050.html" class="app-card quickbill">
+            <div class="app-icon">🚀</div>
+            <h3 class="app-title">퀵빌</h3>
+            <p class="app-description">가장 빠르고 쉬운 전자세금계산서 발행 솔루션</p>
+        </a>
+        <a href="https://blackdogsoftlab.github.io/apps/v070.html" class="app-card gandanmemo">
+            <div class="app-icon">📝</div>
+            <h3 class="app-title">간단메모</h3>
+            <p class="app-description">가장 쉽고 빠른 메모장 & 체크리스트 앱</p>
+        </a>
+        <a href="https://blackdogsoftlab.github.io/apps/v071.html" class="app-card nigahallil">
+            <div class="app-icon">✅</div>
+            <h3 class="app-title">니가할일</h3>
+            <p class="app-description">잊지 않게, 꼼꼼하게. 당신을 위한 체크리스트</p>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>© BLACKDOGSOFT LAB. All rights reserved.</p>
+    <div class="contact">✉️ blackdogsoftlab@gmail.com</div>
+    <p>
+        <a href="https://blackdogsoftlab.github.io/apps/privacy_policy_kor.html" target="_blank">개인정보 처리 방침</a>
+        <span class="sep">|</span>
+        <a href="mailto:blackdogsoftlab@gmail.com">문의하기</a>
+    </p>
+</footer>
+
 </body>
 </html>
